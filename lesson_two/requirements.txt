@@ -1,2 +1,0 @@
-num2words-0.5.10
-transliterate-1.10.2
