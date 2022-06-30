@@ -29,7 +29,7 @@ Read [`this`](https://way23.ru/%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%
 
 Create a file in the project directory `.env`:
 
-![screen_here](/img/screen_vs.png)
+![screen_here](./img/screen_vs.png)
 
 Create `API_TOKEN` variable in `.env` file given by [BotFather](https://t.me/botfather):
 
@@ -46,4 +46,4 @@ python3.10 main.py
 ```
 
 You will see on telegram:
-![screen_here](/img/screen_tl.png)
+![screen_here](./img/screen_tl.png)
