@@ -92,3 +92,103 @@ BETWEEN - включает в себя (от x до y)
 IN - позволяет выбрать данные, соответствующие значениям из списка
 */
 ```
+Выборка данных с сортировкой :
+```sql
+SELECT author, title
+FROM book
+WHERE amount BETWEEN 2 AND 14
+ORDER BY author DESC, title ASC;
+/*
+ORDER BY - сортировка по выбранным столбцам
+DESC - по убыванию
+ASC - по возрастанию
+*/
+```
+Выборка данных, оператор LIKE :
+```sql
+SELECT title, author
+FROM book
+WHERE title LIKE "_%_%" AND author LIKE "%С.%"
+ORDER BY title;
+/*
+_ - любой один символ
+% - любая, неограниченная последовательность символов
+*/
+```
+
+# Запросы, групповые операции
+Выбор уникальных элементов столбца :
+```sql
+SELECT DISTINCT amount
+FROM book;
+```
+Выборка данных, групповые функции SUM и COUNT :
+```sql
+SELECT
+    author AS Автор,
+    COUNT(DISTINCT title) AS Различных_книг,
+    SUM(amount) AS Количество_экземпляров
+FROM book
+GROUP BY author;
+/*
+COUNT(имя_столбца) - возвращает количество записей конкретного столбца
+SUM(имя_столбца) - считает сумму элементов определенной группы
+*/
+```
+Выборка данных, групповые функции MIN, MAX и AVG :
+```sql
+SELECT
+    DISTINCT author,
+    MIN(price) AS Минимальная_цена,
+    MAX(price) AS Максимальная_цена,
+    AVG(price) AS Средняя_цена
+FROM book
+GROUP BY author;
+/* MIN, MAX, AVR - минимум, максимум, среднее  */
+```
+Выборка данных c вычислением, групповые функции :
+```sql
+SELECT
+    DISTINCT author,
+    SUM(price * amount) AS Стоимость,
+    ROUND(SUM(price * amount) * 0.18 / 1.18,2) AS НДС,
+    ROUND((SUM(price * amount))-(ROUND(SUM(price * amount) * 0.18 / 1.18,2)),2) AS Стоимость_без_НДС
+FROM book
+GROUP BY author;
+```
+Вычисления по таблице целиком :
+```sql
+SELECT
+    MIN(price) AS Минимальная_цена,
+    MAX(price) AS Максимальная_цена,
+    ROUND(AVG(price), 2) AS Средняя_цена
+FROM book;
+```
+Выборка данных по условию, групповые функции :
+```sql
+SELECT
+    ROUND(AVG(price),2) AS Средняя_цена,
+    ROUND(SUM(price * amount),2) AS Стоимость
+FROM book
+WHERE amount BETWEEN 5 AND 14;
+```
+Выборка данных по условию, групповые функции, WHERE и HAVING :
+```sql
+SELECT
+    author,
+    SUM(amount * price) AS Стоимость
+FROM
+    book
+WHERE
+    title NOT IN ('Белая_гвардия','Идиот')
+GROUP BY
+    author
+HAVING
+    SUM(amount * price) > 5000
+ORDER BY
+    SUM(amount * price) DESC;
+
+/*
+
+*/
+```
