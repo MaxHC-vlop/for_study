@@ -25,9 +25,9 @@
 
 ### Вёрстка для питониста
 
-- [lesson 1]()
+- [lesson 1](./devman_lessons/elite_vine_sell/)
 
-- [lesson 2]()
+- [lesson 2](./devman_lessons/blog-backend/)
 
 - [lesson 3]()
 
