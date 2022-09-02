@@ -1,28 +1,20 @@
-# Devman
-
-This repository save teaching projects [devman](https://dvmn.org/) .
-
 ## Шпаргалка
 
-Установка актуальной версии:
-```bash
-sudo apt update
+[python install](./reminder/helper.md)
 
-sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+## Devman lessons
+- [lesson 1](./devman_lessons/earth_rotation/.)
 
-wget https://www.python.org/ftp/python/3.10.*/Python-3.10.*.tgz
+- [lesson 2]()
 
-tar -xvf Python-3.10.*.tgz
+- [lesson 3]()
 
-cd Python-3.10.*
+- [lesson 4]()
 
-sudo ./configure --enable-optimizations --prefix=/home/user_name/.python3.10.*
+- [lesson 5]()
 
-make -j 2
+- [lesson 6]()
 
-sudo make altinstall
+- [lesson 7]()
 
-vi ~/.bashrc
-export PATH=$PATH:/home/username/.python3.10.*/bin/
-source ~/.bashrc
-```
+- [lesson 8]()
