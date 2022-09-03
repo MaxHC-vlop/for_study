@@ -187,8 +187,11 @@ HAVING
     SUM(amount * price) > 5000
 ORDER BY
     SUM(amount * price) DESC;
+```
 
-/*
+# Вложенные запросы
 
-*/
+Вложенный запрос, возвращающий одно значение :
+```sql
+
 ```
